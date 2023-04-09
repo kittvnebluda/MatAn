@@ -21,7 +21,8 @@ def tau_right(i):
     return 3 * (i + 1) / n
 
 
-print("Истина: ", np.exp(2) / 2 * (np.exp(6) - 1))
+true_sum = np.exp(2) / 2 * (np.exp(6) - 1)
+print("Истина: ", true_sum)
 
 n = int(input("N ?\n> "))
 equipment = {"l": tau_left, "m": tau_middle, "r": tau_right}
@@ -50,3 +51,6 @@ plt.text(0, 3000, f"N: {n}")
 plt.text(0, 2900, f"Оснащение: {e}")
 plt.text(0, 2800, f"Интегральная сумма: {integral_sum}")
 plt.show()
+
+print(f"Сумма: {integral_sum}")
+print(f"Погрешность: {abs(true_sum - integral_sum)}")
